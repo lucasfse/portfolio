@@ -1,0 +1,39 @@
+header{
+  background-image: url(images/ecologie.jpg);
+}
+
+#presentation {
+  width: 800px;
+  padding: 30px;
+  margin: auto;
+  font-size: 30px;
+}
+  
+.conteneur {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px;
+  margin: 10px;
+}
+  
+section {
+  margin: 0px;
+  padding: 20px;
+  width: 500px;
+  min-height: 300px;
+}
+  
+section img{
+  width: 100%;
+  height: 100%;
+}
+
+p{
+  font-size: 20px;
+}
+
+
+
+
+  

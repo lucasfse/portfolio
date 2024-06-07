@@ -1,0 +1,307 @@
+/* Reset des styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Styles généraux */
+body {
+  font-family: Raleway, Arial, sans-serif;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 0px;
+}
+
+/* Styles pour l'en-tête */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  z-index: 1000; /* Pour s'assurer que le menu reste au-dessus */
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+}
+
+.menu h1 {
+  margin: 0;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  height: 60px; /* Ajustement de la hauteur */
+  align-items: center;
+}
+
+nav ul li {
+  margin-right: 20px;
+  height: 100%; /* Ajustement de la hauteur */
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  display: flex;
+  align-items: center; /* Alignement vertical des textes dans les boutons */
+  height: 100%; /* Ajustement de la hauteur */
+}
+
+nav ul li a:hover {
+  background-color: #fff;
+  color: #000;
+  transition: background-color 0.3s, color 0.3s;
+}
+/* Styles pour la section de présentation */
+.presentation {
+  background-color: #333; /* Fond plus chaleureux */
+  color: #fff;
+  padding: 100px 0;
+  height: 100vh;
+  display: flex; /* Utilisation de flexbox pour centrer le contenu */
+  flex-direction: column; /* Alignement vertical des éléments */
+  justify-content: center; /* Centrage vertical */
+}
+
+.presentation .container {
+  display: flex;
+  justify-content: center; /* Centrer le contenu horizontalement */
+}
+
+.presentation-content {
+  display: flex; /* Utilisation de flexbox pour la mise en page */
+  justify-content: space-between; /* Espace entre les deux parties */
+  align-items: center; /* Centrer verticalement les éléments */
+  width: 80%; /* Ajustez la largeur selon vos besoins */
+}
+
+.presentation-left, .presentation-right {
+  flex: 1; /* Pour que les deux parties prennent le même espace */
+  text-align: center; /* Centrer le texte horizontalement */
+}
+
+.presentation-left {
+  margin-right: 20px; /* Espacement entre les deux parties */
+}
+
+.presentation h1 {
+  font-size: 3em; /* Taille du nom */
+  margin-bottom: 20px; /* Espacement entre le nom et la description */
+}
+
+.presentation-right p {
+  font-size: 1.2em; /* Taille de la description */
+  margin-bottom: 10px; /* Espacement entre les paragraphes */
+}
+
+/* Styles pour les sections de compétences */
+.skills {
+  padding: 50px 0;
+  text-align: center;
+  min-height: 80vh; /* Ajuster la hauteur pour occuper une grande partie de l'écran */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.skills .container {
+  max-width: 1200px; /* Ajustez la largeur selon vos besoins */
+  margin: 0 auto;
+}
+
+.skills h2 {
+  font-size: 2.7em; /* Augmentation de la taille de la police des titres */
+  position: relative;
+  margin-bottom: 40px; /* Ajout de marge pour remonter les titres */
+}
+
+.skills h2::after {
+  content: "";
+  display: block;
+  width: 50px; /* Ajustez la largeur selon vos besoins */
+  height: 5px; /* Épaisseur de la barre */
+  background-color: currentColor; /* Couleur de la barre en accord avec le texte */
+  margin: 10px auto 0; /* Centrage de la barre */
+}
+
+.skills-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap; /* Pour s'assurer que les éléments se réorganisent sur les petits écrans */
+}
+
+.skill {
+  width: 150px; /* Ajustez la largeur selon vos besoins */
+  text-align: center;
+  margin: 20px; /* Espacement entre les items */
+}
+
+.skill img {
+  width: 50px; /* Ajustez la taille de l'icône selon vos besoins */
+  margin-bottom: 10px; /* Espacement entre l'image et le texte */
+}
+
+.skill p {
+  font-size: 1.5em; /* Taille de la police augmentée */
+}
+
+/* Couleurs spécifiques pour chaque section */
+.soft-skills {
+  background-color: #f0f0f0; /* Couleur de fond claire pour les Soft Skills */
+  color: #333;
+}
+
+.hard-skills {
+  background-color: #333; /* Couleur de fond foncée pour les Hard Skills */
+  color: #fff;
+}
+
+/* Styles pour la section des projets */
+.projects {
+  padding: 50px 0;
+  background-color: #fff;
+  color: #333;
+  text-align: center;
+  min-height: 80vh; /* Ajuster la hauteur pour occuper une grande partie de l'écran */
+}
+
+.projects h2 {
+  font-size: 2.7em; /* Taille de la police des titres */
+  position: relative;
+  margin-bottom: 40px; /* Ajout de marge pour espacer les titres des projets */
+}
+
+.projects h2::after {
+  content: "";
+  display: block;
+  width: 50px; /* Ajustez la largeur selon vos besoins */
+  height: 5px; /* Épaisseur de la barre */
+  background-color: currentColor; /* Couleur de la barre en accord avec le texte */
+  margin: 10px auto 0; /* Centrage de la barre */
+}
+
+.projects-container {
+  display: flex;
+  flex-wrap: wrap; /* Pour s'assurer que les éléments se réorganisent sur les petits écrans */
+  justify-content: center;
+}
+
+.project-card {
+  width: 300px; /* Ajustez la largeur selon vos besoins */
+  margin: 20px; /* Espacement entre les cartes */
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  text-align: left; /* Alignement du texte à gauche */
+  display: flex;
+  flex-direction: column; /* Pour aligner le contenu et le bouton */
+  justify-content: space-between; /* Pour que le bouton reste en bas */
+}
+
+.project-card img {
+  width: 100%;
+  height: 200px; /* Ajustez la hauteur selon vos besoins */
+  object-fit: cover; /* Pour s'assurer que l'image couvre toute la zone */
+}
+
+.project-card h3 {
+  font-size: 1.5em;
+  margin: 15px;
+}
+
+.project-card p {
+  margin: 15px;
+  flex-grow: 1; /* Pour que le texte prenne tout l'espace disponible */
+}
+
+.details-button {
+  display: block;
+  width: calc(100% - 30px); /* Ajustez la largeur pour le bouton */
+  margin: 15px;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  align-self: center; /* Pour centrer le bouton horizontalement */
+}
+
+.details-button:hover {
+  background-color: #555;
+  transition: background-color 0.3s;
+}
+
+/* Styles pour les modales */
+.modal {
+  display: none; /* Cache la modal par défaut */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5); /* Fond semi-transparent */
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.modal-content {
+  background-color: #fff;
+  padding: 40px; /* Augmentation des marges pour un meilleur visuel */
+  border-radius: 5px;
+  width: 80%;
+  max-width: 800px; /* Limite la taille de la modal */
+  text-align: left; /* Alignement du texte à gauche */
+  margin: auto; /* Centrer la modal */
+  position: relative; /* Nécessaire pour positionner le bouton de fermeture */
+  top: 50%; /* Placer la modal au centre de l'écran */
+  transform: translateY(-50%); /* Centrer verticalement */
+}
+
+.modal-content h2, p {
+  margin-bottom: 20px;
+}
+
+.modal-content a {
+  width: calc(100% - 30px); /* Ajustez la largeur pour le bouton */
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  align-self: center;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+footer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
