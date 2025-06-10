@@ -1,206 +1,874 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Portfolio - Lucas FOSSE</title>
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset basique */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-snap-type: y mandatory;
+      overflow-y: scroll;
+    }
+
+    body {
+      font-family: 'Raleway', sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      line-height: 1.5;
+      padding-top: 80px;
+    }
+
+    /* Header et Navbar */
+    header#header {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      background-color: rgba(95, 107, 149, 0.95);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+      padding: 15px 5px;
+      height: auto;
+    }
+
+    .navbar {
+      max-width: 100%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0;
+    }
+
+    .navbar h1 {
+      color: white;
+      font-weight: 700;
+      font-size: 1.8rem;
+      letter-spacing: 1.5px;
+      user-select: none;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav ul li a {
+      color: rgba(255, 255, 255, 0.8);
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      padding-bottom: 5px;
+      border-bottom: 3px solid transparent;
+      transition: color 0.3s ease, border-bottom-color 0.3s ease;
+    }
+
+    nav ul li a.active,
+    nav ul li a:hover,
+    nav ul li a:focus {
+      color: white;
+      border-bottom-color: white;
+      outline: none;
+    }
+
+    /* Container commun */
+    .container {
+      max-width: 1100px;
+      width: 100%;
+      padding: 10px;
+      margin: 0 auto;
+    }
+
+    /* Sections */
+    section {
+      min-height: 100vh;
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 95px 10px 0 10px;
+      scroll-snap-align: start;
+    }
+
+    /* Alternance des couleurs de fond */
+    section:nth-child(odd) {
+      background-color: #f5f5f5;
+    }
+
+    section:nth-child(even) {
+      background-color: #e8e8e8;
+    }
+
+    /* Présentation */
+    .presentation-content {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .presentation-left,
+    .presentation-right {
+      flex: 1 1 400px;
+      background-color: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .presentation-left h1 {
+      font-size: 2.4rem;
+      margin-bottom: 15px;
+      color: #5F6B95;
+    }
+
+    .presentation-left p {
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    .presentation-right p {
+      margin-bottom: 15px;
+      font-size: 1rem;
+      color: #555;
+    }
+
+    /* Compétences et Soft Skills */
+    .skills h2,
+    .soft-skills h2,
+    .projects h2,
+    .formations h2,
+    .experiences h2,
+    .contact h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2rem;
+      color: #5F6B95;
+    }
+
+    .skills-container,
+    .soft-skills .skills-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    .skill {
+      min-width: 190px;
+      max-width: 220px;
+      padding: 20px 15px;
+      text-align: center;
+      transition: transform 0.3s ease;
+      cursor: default;
+    }
+
+    .skill:hover {
+      transform: translateY(-5px);
+    }
+
+    .skill img {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+      margin-bottom: 15px;
+    }
+
+    .skill p {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #5F6B95;
+      white-space: nowrap;
+    }
+
+    /* Ajustement spécifique pour les soft skills */
+    .soft-skills .skill p {
+      font-size: 1.1rem;
+      max-width: 100%;
+    }
+
+    /* Formations - Timeline */
+    .formations-container {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+    }
+
+    .timeline {
+      position: relative;
+      width: 100%;
+      padding: 20px 0;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 100%;
+      background-color: #5F6B95;
+    }
+
+    .timeline-item {
+      position: relative;
+      width: 45%;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
+    }
+
+    .timeline-item:nth-child(odd) {
+      margin-left: 5%;
+    }
+
+    .timeline-item:nth-child(even) {
+      margin-left: 50%;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      width: 12px;
+      height: 12px;
+      background-color: #5F6B95;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .timeline-item:nth-child(odd)::before {
+      left: -6px;
+    }
+
+    .timeline-item:nth-child(even)::before {
+      right: -6px;
+    }
+
+    .timeline-item h3 {
+      font-size: 1.3rem;
+      color: #5F6B95;
+      margin-bottom: 10px;
+    }
+
+    .timeline-item p {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    /* Expériences - Timeline */
+    .experiences-container {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+    }
+
+    .experiences .timeline {
+      position: relative;
+      width: 100%;
+      padding: 20px 0;
+    }
+
+    .experiences .timeline::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 100%;
+      background-color: #5F6B95;
+    }
+
+    .experiences .timeline-item {
+      position: relative;
+      width: 45%;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
+    }
+
+    .experiences .timeline-item:nth-child(odd) {
+      margin-left: 5%;
+    }
+
+    .experiences .timeline-item:nth-child(even) {
+      margin-left: 50%;
+    }
+
+    .experiences .timeline-item::before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      width: 12px;
+      height: 12px;
+      background-color: #5F6B95;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .experiences .timeline-item:nth-child(odd)::before {
+      left: -6px;
+    }
+
+    .experiences .timeline-item:nth-child(even)::before {
+      right: -6px;
+    }
+
+    .experiences .timeline-item h3 {
+      font-size: 1.3rem;
+      color: #5F6B95;
+      margin-bottom: 10px;
+    }
+
+    .experiences .timeline-item p {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    /* Projets */
+    .projects-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .project-card {
+      background-color: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .project-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      color: #5F6B95;
+    }
+
+    .project-card .language-tags {
+      margin-bottom: 10px;
+    }
+
+    .language-tag {
+      display: inline-block;
+      background-color: white;
+      color: #5F6B95;
+      padding: 5px 7px;
+      border-radius: 12px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      margin-right: 10px;
+      margin-bottom: 5px;
+      border : 2px solid #5F6B95;
+
+    }
+
+    .project-card p {
+      flex-grow: 1;
+      margin-bottom: 20px;
+      color: #555;
+      font-size: 1rem;
+    }
+
+    .details-button {
+      align-self: flex-start;
+      background-color: #5F6B95;
+      color: white;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 700;
+      transition: background-color 0.3s ease;
+      tabindex: 0;
+    }
+
+    .details-button:hover,
+    .details-button:focus {
+      background-color: #6F7BA5;
+      outline: none;
+    }
+
+    /* Contact */
+    .contact {
+      text-align: center;
+    }
+
+    .contact p {
+      font-size: 1.1rem;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .contact a {
+      display: inline-block;
+      background-color: #5F6B95;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact a:hover,
+    .contact a:focus {
+      background-color: #6F7BA5;
+      outline: none;
+    }
+
+    /* Modals */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow-y: auto;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 60px 15px;
+    }
+
+    .modal-content {
+      background-color: white;
+      margin: auto;
+      border-radius: 15px;
+      max-width: 700px;
+      padding: 30px 25px;
+      position: relative;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .modal-content h2 {
+      margin-bottom: 20px;
+      color: #5F6B95;
+    }
+
+    .modal-content p {
+      margin-bottom: 15px;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    .modal-content a.more-info {
+      display: inline-block;
+      margin-top: 10px;
+      color: #5F6B95;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .modal-content a.more-info:hover,
+    .modal-content a.more-info:focus {
+      text-decoration: underline;
+      outline: none;
+    }
+
+    /* Bouton fermer */
+    .close {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #5F6B95;
+      cursor: pointer;
+      user-select: none;
+      transition: color 0.3s ease;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #6F7BA5;
+      outline: none;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #5F6B95;
+      color: white;
+      padding: 15px 0;
+      text-align: center;
+      margin-top: 60px;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .presentation-content {
+        flex-direction: column;
+      }
+      .presentation-left,
+      .presentation-right {
+        flex: 1 1 100%;
+      }
+      .timeline-item,
+      .experiences .timeline-item {
+        width: 90%;
+        margin-left: 5% !important;
+      }
+      .timeline-item::before,
+      .experiences .timeline-item::before {
+        left: -6px !important;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .navbar h1 {
+        font-size: 1.2rem;
+      }
+      nav ul {
+        gap: 15px;
+      }
+      nav ul li a {
+        font-size: 0.9rem;
+      }
+      .skill p {
+        font-size: 1.1rem;
+      }
+      header#header {
+        width: 95%;
+        padding: 10px 15px;
+      }
+      .language-tag {
+        font-size: 0.8rem;
+        padding: 4px 10px;
+      }
+    }
+  </style>
 </head>
 <body>
-
-  <!-- En-tête -->
   <header id="header">
-    <div class="container">
-      <div class="menu">
-        <h1>Lucas FOSSE</h1>
-        <nav>
-          <ul>
-            <li><a href="#presentation">Présentation</a></li>
-            <li><a href="#soft-skills">Soft Skills</a></li>
-            <li><a href="#hard-skills">Hard Skills</a></li>
-            <li><a href="#projects">Projets</a></li>
-          </ul>
-        </nav>
-      </div>
+    <div class="navbar container">
+      <h1>Lucas FOSSE</h1>
+      <nav>
+        <ul>
+          <li><a href="#presentation" class="active">Présentation</a></li>
+          <li><a href="#formations">Formations</a></li>
+          <li><a href="#projets">Projets</a></li>
+          <li><a href="#competences">Hard Skills</a></li>
+          <li><a href="#soft">Soft Skills</a></li>
+          <li><a href="#experiences">Expériences</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
 
-<!-- Section de présentation -->
-<section class="presentation">
-  <div class="container">
-    <div class="presentation-content">
-      <div class="presentation-left">
-        <h1>Lucas FOSSE</h1>
-        <p>Etudiant en BUT Informatique - Université Grenoble Alpes</p>
-      </div>
-      <div class="presentation-right">
-        <p>Je suis actuellement étudiant en BUT Infomatique à Grenoble. Je suis très interessé par l'informatique, notamment le développement. </p>
-        <p>J'ai passé mon baccalauréat au lycée Vaucanson, à Grenoble, en filière Générale avec pour spécialités Mathématiques et NSI.</p>
-        <p>Dans la vie de tout les jours, je fais de la guirate et apprécie être au contact de la nature.</p>
-      </div>
-    </div>
-  </div>
-</section>
+  <main>
+  
 
-  <!-- Section des Soft Skills -->
-  <section id="soft-skills" class="skills soft-skills">
-    <div class="container">
-      <h2>Soft Skills</h2>
-      <div class="skills-container">
-        <div class="skill">
-          <img src="icons/motivation.png" alt="Autonome Icon">
-          <p>Autonome</p>
+    <section id="presentation">
+      <div class="container presentation-content">
+        <div class="presentation-left">
+          <h1>Lucas FOSSE</h1>
+          <p>Étudiant en informatique - Université Grenoble Alpes</p>
         </div>
-        <div class="skill">
-          <img src="icons/horaire-flexible.png" alt="Flexible Icon">
-          <p>Flexible</p>
-        </div>
-        <div class="skill">
-          <img src="icons/esprit-dequipe.png" alt="Esprit d'équipe Icon">
-          <p>Esprit d'équipe</p>
-        </div>
-        <div class="skill">
-          <img src="icons/la-communication.png" alt="Communication Icon">
-          <p>Communication</p>
+        <div class="presentation-right">
+          <p>Je suis étudiant en deuxième année de BUT Informatique, parcours développement d'applications.</p>
+          <p>Je vous présente ici mes formations, mes expériences et mes projets !</p>
+          <p>N'hésitez pas à me contacter !</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Section des Hard Skills -->
-  <section id="hard-skills" class="skills hard-skills">
-    <div class="container">
+    <section id="formations" class="formations">
+      <h2>Formations</h2>
+      <div class="container formations-container">
+        <div class="timeline">
+          <div class="timeline-item">
+            <h3>Baccalauréat Général</h3>
+            <p>Lycée Vaucanson</p>
+            <p>Spécialités mathématiques, NSI - mention bien</p>
+            <p>2020 - 2023</p>
+          </div>
+          <div class="timeline-item">
+            <h3>BUT Informatique</h3>
+            <p>IUT2 - Grenoble</p>
+            <p>Parcours développement d'applications</p>
+            <p>2023 - Maintenant</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projets" class="projects">
+      <h2>Projets</h2>
+      <div class="container projects-container">
+        <article class="project-card">
+          <h3>Développement d'un site web visant a promouvoir les musées</h3>
+          <div class="language-tags">
+            <span class="language-tag">React</span>
+            <span class="language-tag">Node.js</span>
+            <span class="language-tag">SQL</span>
+          </div>
+          <p>Promouvoir les musées en recommandant aux utilisateurs des musées selon leurs préférences picturales.</p>
+          <button class="details-button" data-modal="modal1" tabindex="0">Détails</button>
+        </article>
+        <article class="project-card">
+          <h3>Réalisation d'une application de gestion d'évènements</h3>
+          <div class="language-tags">
+            <span class="language-tag">Java</span>
+            <span class="language-tag">JavaFX</span>
+          </div>
+          <p>Réalisation d'une application de gestion d'évènements, en équipe de 6, en utilisant Java et JavaFX.</p>
+          <button class="details-button" data-modal="modal2" tabindex="0">Détails</button>
+        </article>
+        <article class="project-card">
+          <h3>Exploitation d'une base de données</h3>
+          <div class="language-tags">
+            <span class="language-tag">SQL</span>
+            <span class="language-tag">RStudio</span>
+          </div>
+          <p>Réalisation d'une étude contenant des graphiques pour répondre à une question précise, rédigée en anglais, en se basant sur l'analyse de données relatives au nutriscore.</p>
+          <button class="details-button" data-modal="modal3" tabindex="0">Détails</button>
+        </article>
+        <article class="project-card">
+          <h3>Réalisation d'un guide d'installation d'un serveur Debian 12</h3>
+          <div class="language-tags">
+            <span class="language-tag">Linux</span>
+          </div>
+          <p>Réalisation d'un guide d'installation d'un serveur Debian 12.</p>
+          <button class="details-button" data-modal="modal4" tabindex="0">Détails</button>
+        </article>
+      </div>
+    </section>
+
+
+    <section id="competences" class="skills">
       <h2>Hard Skills</h2>
-      <div class="skills-container">
+      <div class="container skills-container">
         <div class="skill">
-          <img src="icons/java.png" alt="Java Icon">
-          <p>Java</p>
+          <img src="icons/hard-skills/script-java.png" alt="JavaScript" />
+          <p>JavaScript</p>
         </div>
         <div class="skill">
-          <img src="icons/sql.png" alt="SQL Icon">
-          <p>SQL</p>
-        </div>
-        <div class="skill">
-          <img src="icons/html.png" alt="HTML Icon">
+          <img src="icons/hard-skills/html-5.png" alt="HTML" />
           <p>HTML</p>
         </div>
         <div class="skill">
-          <img src="icons/css.png" alt="CSS Icon">
-          <p>CSS</p>
+          <img src="icons/hard-skills/css-3-2.png" alt="CSS3" />
+          <p>CSS3</p>
+        </div>
+        <div class="skill">
+          <img src="icons/hard-skills/java.png" alt="Java" />
+          <p>Java</p>
+        </div>
+        <div class="skill">
+          <img src="icons/hard-skills/c-plus-plus.png" alt="C/C++/C#" />
+          <p>C/C#/C++</p>
+        </div>
+        <div class="skill">
+          <img src="icons/hard-skills/langage-de-programmation-php.png" alt="PHP" />
+          <p>PHP</p>
+        </div>
+        <div class="skill">
+          <img src="icons/hard-skills/serveur-sql.png" alt="SQL" />
+          <p>SQL</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Section des Projets -->
-  <section id="projects" class="projects">
-    <div class="container">
-      <h2>Projets</h2>
-      <div class="projects-container">
-        <div class="project-card">
-          <h3>Java - classification de dépêches</h3>
-          <p>Implémenter un programme de classification automatique de dépêches aussi fiable et rapide que possible</p>
-          <button class="details-button" onclick="openModal('modal1')">Voir plus</button>
+    <section id="soft" class="soft-skills">
+      <h2>Soft Skills</h2>
+      <div class="container skills-container">
+        <div class="skill">
+          <img src="icons/soft-skills/autonomie-2.png" alt="Autonome Icon">
+          <p>Organisation</p>
         </div>
-        <div class="project-card">
-          <h3>SQL et RStudio - exploitation d'une base de données</h3>
-          <p>Réalisation d'une étude contenant des graphiques pour répondre à une question précise, rédigée en anglais, en se basant sur l'analyse de données relatives au nutriscore</p>
-          <button class="details-button" onclick="openModal('modal2')">Voir plus</button>
+        <div class="skill">
+          <img src="icons/soft-skills/horaire-flexible.png" alt="Flexible Icon">
+          <p>Flexible</p>
         </div>
-        <div class="project-card">
-          <h3>HTML et CSS - réalisation d'un site web</h3>
-          <p>Réalisation d'un site web suite à un recueil de besoins effectué au préalable, en équipe de 4.</p>
-          <button class="details-button" onclick="openModal('modal3')">Voir plus</button>
+        <div class="skill">
+          <img src="icons/soft-skills/esprit-dequipe.png" alt="Esprit d'équipe Icon">
+          <p>Esprit d'équipe</p>
         </div>
-        <div class="project-card">
-          <h3>Linux - Réalisation d'un guide d'installation d'un serveur Debian 12</h3>
-          <p>Réalisation d'un guide d'installation d'un serveur Debian 12.</p>
-          <button class="details-button" onclick="openModal('modal4')">Voir plus</button>
-        </div>
-        <div class="project-card">
-          <h3>Java & JavaFX - réalisation d'une application de gestion d'évènements</h3>
-          <p>Réalisation d'une application de gestion d'évènements, en équipe de 6, en utilisant Java et JavaFX.</p>
-          <button class="details-button" onclick="openModal('modal5')">Voir plus</button>
+        <div class="skill">
+          <img src="icons/soft-skills/la-communication.png" alt="Communication Icon">
+          <p>Communication</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Modal pour le Projet 1 -->
-  <div id="modal1" class="modal">
+
+    <section id="experiences" class="experiences">
+      <h2>Expériences</h2>
+      <div class="container experiences-container">
+        <div class="timeline">
+          <div class="timeline-item">
+            <h3>Assistant de vente</h3>
+            <p>OCEAN Coquillages & Crustacés</p>
+            <p>2023</p>
+          </div>
+          <div class="timeline-item">
+            <h3>Stage développement web - amélioration du MES de l'entreprise</h3>
+            <p>JAY Electronique</p>
+            <p>2025</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="contact" class="contact">
+      <h2>Contact</h2>
+      <div class="container">
+        <p>N'hésitez pas à me contacter en cas de question ! </p>
+        <a href="mailto:lucasfosse38@gmail.com">Envoyer un email</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modals -->
+  <div id="modal1" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modal1-title" aria-modal="true">
     <div class="modal-content">
-      <span class="close" onclick="closeModal('modal1')">&times;</span>
-      <h2>Java - classification de dépêches</h2>
-      <p>L'objectif de ce projet était d'implémenter un programme de classification automatique de dépêches aussi fiable et aussi rapide que possible.</p>
-      <p>Nous avons travaillé en équipe de deux, avec une répartition des tâches comme ceci : la réalisation d'un rapport en anglais en majorité assuré par un des membres, et l'autre membre étant concentré sur le développement du programme.</p>
-      <p>Pour ma part, j'ai davantage travaillé sur le développement du programme avec la réalisation de plusieurs classes, telles que cellespour la génération automatique d'un fichier texte contenant le classement des dépêches, la réalisation de classements à partir d'une base de données de test, et l'exécution sur une base de données différente pour le classement. Nous avons également optimisé notre programme afin de réduire le temps d'exécution.</p>
+      <span class="close" role="button" tabindex="0" aria-label="Fermer la fenêtre modale">×</span>
+      <h2 id="modal1-title">Développement d'un site web visant a promouvoir les musées</h2>
+      <p>Dans le cadre d'un projet universitaire, nous devions réaliser une application visant a promouvoir le patrimoine culturel. En équipe de 6, nous avons donc développé un site web recommandant des musées en fonction des préférences collectés.</p>
+      <p>L'application fonctionne à l'aide d'un algorithme qui recueil un certain nombre de préférences grace à un système de swipe, et, au bout de 10 swipes, propose un musée proche de chez l'utilisateur et en fonction de ses gouts.</p>
+      <p>Pour ma part, étant chef de projet, j'ai particulièrement du travailler sur le cadrage de projet et la répartition des tâches. Cependant, j'ai aussi beaucoup travaillé sur l'aspect conception (modélisation des classes, des IHM) et le développement des interfaces en React.</p>
+      <a href="#" class="more-info" target="_blank" rel="noopener noreferrer">En savoir plus</a>
     </div>
   </div>
 
-  <!-- Modal pour le Projet 2 -->
-  <div id="modal2" class="modal">
+  <div id="modal2" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modal2-title" aria-modal="true">
     <div class="modal-content">
-      <span class="close" onclick="closeModal('modal2')">&times;</span>
-      <h2>SQL et RStudio - exploitation d'une base de données</h2>
-      <p>La finalité de ce travail était de réaliser une étude en anglais comprenant des graphiques au sujet du nutriscore.</p>
-      <p>Nous avons travaillé en équipe de deux, avec une répartition des tâches comme ceci : la réalisation du rapport et des graphiques par un des membres, et l'élaboration des requêtes et gestion des risques par l'autre membre.</p>
-      <p>Pour ma part, j'ai davantage travaillé sur l'écriture des requêtes ainsi que la gestion des risques.</p>
-      <a href="SAE2.04_Adrien_LEGLISE_Lucas_FOSSE.html">Afficher le rapport</a>
-    </div>
-  </div>
-
-  <!-- Modal pour le Projet 3 -->
-  <div id="modal3" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('modal3')">&times;</span>
-      <h2>HTML et CSS - réalisation d'un site web</h2>
-      <p>La finalité de ce projet était de réaliser un site web, faisant suite à un recueil de besoins, le tout pour une entreprise.</p>
-      <p>Nous étions une équipe de 4 et nous avons réparti les tâches de la façon suivante : 2 personnes concentrées sur le codage HTML/CSS du site et 2 autres personnes plus concentrées sur la recherche d'informations et la formulation des textes.</p>
-      <p>Pour ma part, j'ai davantage appuyé la réalisation des textes, la recherche d'images, l'organisation de l'équipe et la répartition des tâches. J'ai également aidé lors de la réalisation du site en HTML/CSS.</p>
-      <a href="SAE/realisation/acceuil.html" class="more-info">Afficher le site web</a>
-    </div>
-  </div>
-
-    <!-- Modal pour le Projet 4 -->
-    <div id="modal4" class="modal">
-      <div class="modal-content">
-        <span class="close" onclick="closeModal('modal4')">&times;</span>
-        <h2>Linux - Réalisation d'un guide d'installation d'un serveur Debian 12</h2>
-        <p>Réalisation, en individuel, d'un guide d'installation d'un serveur Debian 12.</p>
-        <p>Ce guide contient, explications et commandes, pour l'installation et la configuration du serveur, ainsi que, sur ce serveur, la configuration d'Apache, PostgreSQL, PHP et phpPgAdmin.</p>
-        <a href="A2-FOSSE-Lucas-guide-d-installation.pdf" class="more-info">Afficher le guide d'installation</a>
-      </div>
-    </div>
-
-      <!-- Modal pour le Projet 5 -->
-  <div id="modal5" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('modal5')">&times;</span>
-      <h2>Java & JavaFX - réalisation d'une application de gestion d'évènements</h2>
+      <span class="close" role="button" tabindex="0" aria-label="Fermer la fenêtre modale">×</span>
+      <h2 id="modal2-title">Réalisation d'une application de gestion d'évènements</h2>
       <p>En équipe de 6, nous avons réalisé une application de gestion d'évènements. Notre projet était structuré en plusieurs étapes : rédaction d'un dossier de conception, rédaction d'un dossier de conception IHM (aspect graphique), gestion des risques lié a ce projet et optimisation mathématique.</p>
       <p>Notre application était une application de gestion funéraire, comprenant tous les aspects nécessaire a ce type de structures : gestion employés, contrats obsèques, calendrier, rendez-vous, véhicules et prestations.</p>
       <p>Pour ma part, lors de ce projet, j'ai particulièrement travaillé sur le dossier de conception, la gestion des risques et la programmation de l'application.</p>
       <p>J'ai également, avec une autre personne de l'équipe, assuré la supervision et la répartition des tâches.</p>
-      <a href="#" class="more-info">Télécharger l'application</a>
+      <a href="https://github.com/lucasfse/gestion-event" class="more-info" target="_blank" rel="noopener noreferrer">En savoir plus</a>
     </div>
   </div>
 
-  
+  <div id="modal3" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modal3-title" aria-modal="true">
+    <div class="modal-content">
+      <span class="close" role="button" tabindex="0" aria-label="Fermer la fenêtre modale">×</span>
+      <h2 id="modal3-title">Exploitation d'une base de données</h2>
+      <p>La finalité de ce travail était de réaliser une étude en anglais comprenant des graphiques au sujet du nutriscore.</p>
+      <p>Nous avons travaillé en équipe de deux, avec une répartition des tâches comme ceci : la réalisation du rapport et des graphiques par un des membres, et l'élaboration des requêtes et gestion des risques par l'autre membre.</p>
+      <p>Pour ma part, j'ai davantage travaillé sur l'écriture des requêtes ainsi que la gestion des risques.</p>
+      <a href="SAE2.04_Adrien_LEGLISE_Lucas_FOSSE.html" class="more-info" target="_blank" rel="noopener noreferrer">En savoir plus</a>
+    </div>
+  </div>
+
+  <div id="modal4" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modal4-title" aria-modal="true">
+    <div class="modal-content">
+      <span class="close" role="button" tabindex="0" aria-label="Fermer la fenêtre modale">×</span>
+      <h2 id="modal3-title">Réalisation d'un guide d'installation d'un serveur Debian 12</h2>
+      <p>Réalisation, en individuel, d'un guide d'installation d'un serveur Debian 12.</p>
+      <p>Ce guide contient, explications et commandes, pour l'installation et la configuration du serveur, ainsi que, sur ce serveur, la configuration d'Apache, PostgreSQL, PHP et phpPgAdmin.</p>
+      <a href="A2-FOSSE-Lucas-guide-d-installation.pdf" class="more-info" target="_blank" rel="noopener noreferrer">En savoir plus</a>
+    </div>
+  </div>
 
   <footer>
-    <div class="container">
-      <p>&copy; 2024 Mon Portfolio - Réalisé par Lucas FOSSE</p>
-    </div>
+    © Lucas FOSSE - 2025
   </footer>
 
   <script>
-    function openModal(modalId) {
-      document.getElementById(modalId).style.display = "block";
-    }
+    // Gestion du menu actif lors du clic
+    const navLinks = document.querySelectorAll('nav ul li a');
 
-    function closeModal(modalId) {
-      document.getElementById(modalId).style.display = "none";
-    }
+    navLinks.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        navLinks.forEach(l => l.classList.remove('active'));
+        e.target.classList.add('active');
+        const targetId = e.target.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetId);
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // Gestion du menu actif au scroll
+    window.addEventListener('scroll', () => {
+      let scrollPos = window.scrollY + 100;
+      navLinks.forEach(link => {
+        const section = document.querySelector(link.getAttribute('href'));
+        if (section) {
+          if (
+            section.offsetTop <= scrollPos &&
+            section.offsetTop + section.offsetHeight > scrollPos
+          ) {
+            navLinks.forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
+          }
+        }
+      });
+    });
+
+    // Gestion ouverture/fermeture modals
+    const modals = document.querySelectorAll('.modal');
+    const detailsButtons = document.querySelectorAll('.details-button');
+    const closeButtons = document.querySelectorAll('.close');
+
+    detailsButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const modalId = btn.getAttribute('data-modal');
+        const modal = document.getElementById(modalId);
+        if (modal) {
+          modal.style.display = 'block';
+          modal.setAttribute('aria-hidden', 'false');
+          modal.querySelector('.modal-content').focus();
+        }
+      });
+    });
+
+    closeButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const modal = btn.closest('.modal');
+        if (modal) {
+          modal.style.display = 'none';
+          modal.setAttribute('aria-hidden', 'true');
+        }
+      });
+      btn.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          btn.click();
+        }
+      });
+    });
+
+    modals.forEach(modal => {
+      modal.addEventListener('click', e => {
+        if (e.target === modal) {
+          modal.style.display = 'none';
+          modal.setAttribute('aria-hidden', 'true');
+        }
+      });
+    });
   </script>
 </body>
 </html>

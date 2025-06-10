@@ -1,307 +1,357 @@
-/* Reset des styles */
+/* Reset basique */
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
-/* Styles généraux */
 body {
-  font-family: Raleway, Arial, sans-serif;
+  font-family: 'Raleway', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.5;
 }
 
-.container {
-  width: 80%;
-  margin: 0 auto;
-  padding: 0px;
-}
-
-/* Styles pour l'en-tête */
-header {
+/* Header et Navbar */
+header#header {
   position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: #000;
-  color: #fff;
-  z-index: 1000; /* Pour s'assurer que le menu reste au-dessus */
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(128, 80, 80, 0.9); /* un peu transparent */
+  padding: 10px 30px;
+  border-radius: 30px;
+  box-shadow: 0 8px 15px rgba(128, 80, 80, 0.4);
+  z-index: 1000;
+  width: fit-content;
+  max-width: 90vw;
 }
 
-.menu {
+
+header#header.hide {
+  top: -80px; /* Cache le header lors du scroll vers le bas */
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.navbar h1 {
+  color: white;
+  font-weight: 700;
+  font-size: 1.5rem;
+  user-select: none;
+}
+
+.navbar nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.navbar nav ul li a {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  padding-bottom: 4px;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.navbar nav ul li a.active,
+.navbar nav ul li a:hover,
+.navbar nav ul li a:focus {
+  color: white;
+  border-bottom: 3px solid white;
+  outline: none;
+}
+
+.navbar {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 15px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 60px;
 }
 
-.menu h1 {
-  margin: 0;
+.navbar h1 {
+  font-weight: 700;
+  font-size: 1.8rem;
+  letter-spacing: 1.5px;
 }
 
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+.navbar nav ul {
+  list-style: none;
   display: flex;
-  height: 60px; /* Ajustement de la hauteur */
-  align-items: center;
+  gap: 25px;
 }
 
-nav ul li {
-  margin-right: 20px;
-  height: 100%; /* Ajustement de la hauteur */
-}
-
-nav ul li a {
-  color: #fff;
+.navbar nav ul li a {
+  color: white;
   text-decoration: none;
-  padding: 10px;
-  display: flex;
-  align-items: center; /* Alignement vertical des textes dans les boutons */
-  height: 100%; /* Ajustement de la hauteur */
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.3s ease;
 }
 
-nav ul li a:hover {
-  background-color: #fff;
-  color: #000;
-  transition: background-color 0.3s, color 0.3s;
-}
-/* Styles pour la section de présentation */
-.presentation {
-  background-color: #333; /* Fond plus chaleureux */
-  color: #fff;
-  padding: 100px 0;
-  height: 100vh;
-  display: flex; /* Utilisation de flexbox pour centrer le contenu */
-  flex-direction: column; /* Alignement vertical des éléments */
-  justify-content: center; /* Centrage vertical */
+.navbar nav ul li a:hover,
+.navbar nav ul li a:focus {
+  color: #ffbb88;
+  outline: none;
 }
 
-.presentation .container {
-  display: flex;
-  justify-content: center; /* Centrer le contenu horizontalement */
+/* Container commun */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 90px 20px 40px; /* padding top > hauteur header pour ne pas être caché */
 }
 
+/* Présentation */
 .presentation-content {
-  display: flex; /* Utilisation de flexbox pour la mise en page */
-  justify-content: space-between; /* Espace entre les deux parties */
-  align-items: center; /* Centrer verticalement les éléments */
-  width: 80%; /* Ajustez la largeur selon vos besoins */
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 20px;
 }
 
 .presentation-left, .presentation-right {
-  flex: 1; /* Pour que les deux parties prennent le même espace */
-  text-align: center; /* Centrer le texte horizontalement */
+  flex: 1 1 400px;
+  background-color: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
 }
 
-.presentation-left {
-  margin-right: 20px; /* Espacement entre les deux parties */
+.presentation-left h1 {
+  font-size: 2.4rem;
+  margin-bottom: 15px;
+  color: #805050;
 }
 
-.presentation h1 {
-  font-size: 3em; /* Taille du nom */
-  margin-bottom: 20px; /* Espacement entre le nom et la description */
+.presentation-left p {
+  font-weight: 600;
+  font-size: 1.1rem;
 }
 
 .presentation-right p {
-  font-size: 1.2em; /* Taille de la description */
-  margin-bottom: 10px; /* Espacement entre les paragraphes */
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #555;
 }
 
-/* Styles pour les sections de compétences */
-.skills {
-  padding: 50px 0;
-  text-align: center;
-  min-height: 80vh; /* Ajuster la hauteur pour occuper une grande partie de l'écran */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.skills .container {
-  max-width: 1200px; /* Ajustez la largeur selon vos besoins */
-  margin: 0 auto;
-}
-
+/* Sections de compétences */
 .skills h2 {
-  font-size: 2.7em; /* Augmentation de la taille de la police des titres */
-  position: relative;
-  margin-bottom: 40px; /* Ajout de marge pour remonter les titres */
-}
-
-.skills h2::after {
-  content: "";
-  display: block;
-  width: 50px; /* Ajustez la largeur selon vos besoins */
-  height: 5px; /* Épaisseur de la barre */
-  background-color: currentColor; /* Couleur de la barre en accord avec le texte */
-  margin: 10px auto 0; /* Centrage de la barre */
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  color: #805050;
 }
 
 .skills-container {
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap; /* Pour s'assurer que les éléments se réorganisent sur les petits écrans */
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
 }
 
 .skill {
-  width: 150px; /* Ajustez la largeur selon vos besoins */
+  background-color: white;
+  border-radius: 12px;
+  width: 140px;
+  padding: 20px 15px;
   text-align: center;
-  margin: 20px; /* Espacement entre les items */
+  box-shadow: 0 3px 7px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  cursor: default;
+}
+
+.skill:hover {
+  transform: translateY(-5px);
 }
 
 .skill img {
-  width: 50px; /* Ajustez la taille de l'icône selon vos besoins */
-  margin-bottom: 10px; /* Espacement entre l'image et le texte */
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  margin-bottom: 15px;
 }
 
 .skill p {
-  font-size: 1.5em; /* Taille de la police augmentée */
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #805050;
 }
 
-/* Couleurs spécifiques pour chaque section */
-.soft-skills {
-  background-color: #f0f0f0; /* Couleur de fond claire pour les Soft Skills */
-  color: #333;
-}
-
-.hard-skills {
-  background-color: #333; /* Couleur de fond foncée pour les Hard Skills */
-  color: #fff;
-}
-
-/* Styles pour la section des projets */
-.projects {
-  padding: 50px 0;
-  background-color: #fff;
-  color: #333;
-  text-align: center;
-  min-height: 80vh; /* Ajuster la hauteur pour occuper une grande partie de l'écran */
-}
-
+/* Projets */
 .projects h2 {
-  font-size: 2.7em; /* Taille de la police des titres */
-  position: relative;
-  margin-bottom: 40px; /* Ajout de marge pour espacer les titres des projets */
-}
-
-.projects h2::after {
-  content: "";
-  display: block;
-  width: 50px; /* Ajustez la largeur selon vos besoins */
-  height: 5px; /* Épaisseur de la barre */
-  background-color: currentColor; /* Couleur de la barre en accord avec le texte */
-  margin: 10px auto 0; /* Centrage de la barre */
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  color: #805050;
 }
 
 .projects-container {
-  display: flex;
-  flex-wrap: wrap; /* Pour s'assurer que les éléments se réorganisent sur les petits écrans */
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
 }
 
 .project-card {
-  width: 300px; /* Ajustez la largeur selon vos besoins */
-  margin: 20px; /* Espacement entre les cartes */
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  overflow: hidden;
-  text-align: left; /* Alignement du texte à gauche */
+  background-color: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   display: flex;
-  flex-direction: column; /* Pour aligner le contenu et le bouton */
-  justify-content: space-between; /* Pour que le bouton reste en bas */
-}
-
-.project-card img {
-  width: 100%;
-  height: 200px; /* Ajustez la hauteur selon vos besoins */
-  object-fit: cover; /* Pour s'assurer que l'image couvre toute la zone */
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .project-card h3 {
-  font-size: 1.5em;
-  margin: 15px;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #805050;
 }
 
 .project-card p {
-  margin: 15px;
-  flex-grow: 1; /* Pour que le texte prenne tout l'espace disponible */
+  flex-grow: 1;
+  margin-bottom: 20px;
+  color: #555;
+  font-size: 1rem;
 }
 
 .details-button {
-  display: block;
-  width: calc(100% - 30px); /* Ajustez la largeur pour le bouton */
-  margin: 15px;
-  padding: 10px;
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  text-decoration: none;
+  align-self: flex-start;
+  background-color: #805050;
+  color: white;
+  padding: 10px 18px;
   border: none;
+  border-radius: 8px;
   cursor: pointer;
-  align-self: center; /* Pour centrer le bouton horizontalement */
+  font-weight: 700;
+  transition: background-color 0.3s ease;
 }
 
-.details-button:hover {
-  background-color: #555;
-  transition: background-color 0.3s;
+.details-button:hover,
+.details-button:focus {
+  background-color: #a06161;
+  outline: none;
 }
 
-/* Styles pour les modales */
+/* Modals */
 .modal {
-  display: none; /* Cache la modal par défaut */
+  display: none;
   position: fixed;
-  top: 0;
+  z-index: 2000;
   left: 0;
+  top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.5); /* Fond semi-transparent */
-  justify-content: center;
-  align-items: center;
+  overflow-y: auto;
+  background-color: rgba(0,0,0,0.6);
+  padding: 60px 15px;
 }
-
-
 
 .modal-content {
-  background-color: #fff;
-  padding: 40px; /* Augmentation des marges pour un meilleur visuel */
-  border-radius: 5px;
-  width: 80%;
-  max-width: 800px; /* Limite la taille de la modal */
-  text-align: left; /* Alignement du texte à gauche */
-  margin: auto; /* Centrer la modal */
-  position: relative; /* Nécessaire pour positionner le bouton de fermeture */
-  top: 50%; /* Placer la modal au centre de l'écran */
-  transform: translateY(-50%); /* Centrer verticalement */
+  background-color: white;
+  margin: auto;
+  border-radius: 15px;
+  max-width: 700px;
+  padding: 30px 25px;
+  position: relative;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 
-.modal-content h2, p {
+.modal-content h2 {
   margin-bottom: 20px;
+  color: #805050;
 }
 
-.modal-content a {
-  width: calc(100% - 30px); /* Ajustez la largeur pour le bouton */
-  padding: 10px;
-  background-color: #333;
-  color: #fff;
-  text-align: center;
+.modal-content p {
+  margin-bottom: 15px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.modal-content a.more-info {
+  display: inline-block;
+  margin-top: 10px;
+  color: #805050;
+  font-weight: 700;
   text-decoration: none;
-  border: none;
-  cursor: pointer;
-  align-self: center;
 }
 
+.modal-content a.more-info:hover,
+.modal-content a.more-info:focus {
+  text-decoration: underline;
+  outline: none;
+}
+
+/* Bouton fermer */
 .close {
   position: absolute;
-  top: 20px;
   right: 20px;
-  font-size: 1.5em;
+  top: 20px;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #805050;
   cursor: pointer;
+  user-select: none;
+  transition: color 0.3s ease;
 }
 
+.close:hover,
+.close:focus {
+  color: #a06161;
+  outline: none;
+}
+
+/* Footer */
 footer {
-  background-color: #000;
-  color: #fff;
+  background-color: #805050;
+  color: white;
+  padding: 15px 0;
   text-align: center;
-  padding: 20px 0;
+  margin-top: 60px;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .presentation-content {
+    flex-direction: column;
+  }
+  .presentation-left, .presentation-right {
+    flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .navbar nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 20px;
+  scroll-snap-align: start; /* pour un scroll plus "snappy" (optionnel) */
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin-top: 100px; /* Pour que le header flottant ne cache pas le début des sections */
 }
