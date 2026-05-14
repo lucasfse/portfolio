@@ -3,241 +3,483 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfolio - Lucas FOSSE</title>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet" />
+  <title>Lucas FOSSE | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header id="header">
-    <div class="navbar container">
-      <h1>Lucas FOSSE</h1>
-      <nav>
-        <ul>
-          <li><a href="#presentation" class="active">Présentation</a></li>
-          <li><a href="#formations">Formations</a></li>
-          <li><a href="#projets">Projets</a></li>
-          <li><a href="#competences">Hard Skills</a></li>
-          <li><a href="#soft">Soft Skills</a></li>
-          <li><a href="#experiences">Expériences</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+  <div class="page-shell">
+    <header class="site-header" id="header">
+      <div class="container header-inner">
+        <a class="brand" href="#accueil" aria-label="Retour en haut de la page">
+          <span class="brand-name">Lucas FOSSE</span>
+          <span class="brand-role">Portfolio</span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          aria-label="Ouvrir le menu"
+        >
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="site-nav" id="site-nav" aria-label="Navigation principale">
+          <ul>
+            <li><a href="#accueil" class="active">Accueil</a></li>
+            <li><a href="#a-propos">Profil</a></li>
+            <li><a href="#parcours">Parcours</a></li>
+            <li><a href="#projets">Projets</a></li>
+            <li><a href="#competences">Compétences</a></li>
+            <li><a href="#experiences">Expériences</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero-section" id="accueil">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Alternance 2026</p>
+            <h1>Lucas FOSSE</h1>
+            <p class="hero-text">
+              Étudiant en BUT3 Informatique, en bi-diplomation à l'Université du Québec à Chicoutimi,
+              je recherche une alternance en développement logiciel, data ou automatisation à partir de la rentrée 2026.
+            </p>
+            <p class="hero-text">
+              Je m'intéresse aux outils concrets, à leur fiabilité et à leur amélioration continue,
+              avec une appétence pour la conception, les bases de données et les environnements techniques structurés.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#projets">Voir mes projets</a>
+              <a class="button button-secondary" href="mailto:lucasfosse38@gmail.com">Me contacter</a>
+            </div>
+          </div>
+
+          <aside class="hero-panel" aria-label="Résumé du profil">
+            <p class="panel-label">Profil</p>
+            <ul class="profile-facts">
+              <li>BUT3 Informatique, bi-diplomation UGA / UQAC</li>
+              <li>Recherche d'alternance pour la rentrée 2026</li>
+              <li>Développement logiciel, analyse de données et automatisation</li>
+            </ul>
+            <div class="hero-note">
+              <span class="note-title">Coordonnées</span>
+              <p>
+                Grenoble · Permis B · 07 68 38 96 61<br />
+                <a href="mailto:lucasfosse38@gmail.com">lucasfosse38@gmail.com</a>
+              </p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section intro-section" id="a-propos">
+        <div class="container section-grid">
+          <div class="section-heading">
+            <p class="section-kicker">Profil</p>
+            <h2>Un profil orienté vers des outils utiles, robustes et bien conçus.</h2>
+          </div>
+          <div class="intro-cards">
+            <article class="info-card large">
+              <p>
+                Je suis formé au développement logiciel, à l'analyse de données et à
+                l'environnement Linux. Ce qui m'intéresse surtout, ce sont les projets
+                où il faut comprendre un besoin concret, concevoir une solution fiable
+                puis la faire évoluer proprement.
+              </p>
+              <p>
+                Mon stage en entreprise comme mes projets universitaires m'ont appris à
+                travailler sur la conception, les interfaces, le back-end, les bases
+                de données et la documentation, avec un cadre de travail structuré.
+              </p>
+            </article>
+            <div class="profile-notes">
+              <article class="info-card compact">
+                <p class="card-title">Ce que j'apporte</p>
+                <p>Rigueur, autonomie, capacité d'adaptation et attention portée à la qualité du résultat.</p>
+              </article>
+              <article class="info-card compact">
+                <p class="card-title">Recherche</p>
+                <p>Une alternance où je peux contribuer à des applications, des traitements de données ou des outils d'automatisation.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section timeline-section" id="parcours">
+        <div class="container">
+          <div class="section-heading split">
+            <div>
+              <p class="section-kicker">Parcours</p>
+              <h2>Formation et progression.</h2>
+            </div>
+            <p class="section-summary">
+              Un parcours construit entre développement d'applications, systèmes,
+              bases de données et ouverture à l'international.
+            </p>
+          </div>
+
+          <div class="timeline-list">
+            <article class="timeline-card">
+              <span class="timeline-date">Depuis septembre 2025</span>
+              <h3>Baccalauréat Informatique</h3>
+              <p class="timeline-place">Université du Québec à Chicoutimi - Canada</p>
+              <p>Bi-diplomation réalisée dans le cadre de la 3e année du BUT Informatique.</p>
+            </article>
+            <article class="timeline-card">
+              <span class="timeline-date">2020 - 2023</span>
+              <h3>Baccalauréat Général</h3>
+              <p class="timeline-place">Lycée Polyvalent Vaucanson - Grenoble</p>
+              <p>Spécialités mathématiques et NSI, mention bien.</p>
+            </article>
+            <article class="timeline-card">
+              <span class="timeline-date">Depuis septembre 2023</span>
+              <h3>BUT Informatique</h3>
+              <p class="timeline-place">IUT2 - Université Grenoble Alpes</p>
+              <p>BUT 1re et 2e année validées, parcours développement d'applications.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section projects-section" id="projets">
+        <div class="container">
+          <div class="section-heading split">
+            <div>
+              <p class="section-kicker">Projets</p>
+              <h2>Quelques projets représentatifs de mon parcours.</h2>
+            </div>
+            <p class="section-summary">
+              Ces réalisations montrent surtout ma manière de travailler:
+              analyser, concevoir, développer et documenter.
+            </p>
+          </div>
+
+          <div class="projects-grid">
+            <article class="project-card">
+              <p class="project-index">Projet 01</p>
+              <h3>Site web de recommandation de musées</h3>
+              <div class="language-tags">
+                <span class="language-tag">React</span>
+                <span class="language-tag">Node.js</span>
+                <span class="language-tag">SQL</span>
+              </div>
+              <p>
+                Développement d'une application web de recommandation culturelle
+                construite en équipe, avec logique de suggestion et travail sur l'interface.
+              </p>
+              <button class="details-button" data-modal="modal1" type="button">Lire le projet</button>
+            </article>
+
+            <article class="project-card">
+              <p class="project-index">Projet 02</p>
+              <h3>Application de gestion d'évènements</h3>
+              <div class="language-tags">
+                <span class="language-tag">Java</span>
+                <span class="language-tag">JavaFX</span>
+              </div>
+              <p>
+                Conception d'une application métier en équipe avec dossier de conception,
+                réflexion IHM, gestion des risques et développement Java.
+              </p>
+              <button class="details-button" data-modal="modal2" type="button">Lire le projet</button>
+            </article>
+
+            <article class="project-card">
+              <p class="project-index">Projet 03</p>
+              <h3>Exploitation d'une base de données</h3>
+              <div class="language-tags">
+                <span class="language-tag">SQL</span>
+                <span class="language-tag">RStudio</span>
+              </div>
+              <p>
+                Travail de traitement et d'exploitation d'un jeu de données avec
+                requêtes, graphiques et restitution analytique en anglais.
+              </p>
+              <button class="details-button" data-modal="modal3" type="button">Lire le projet</button>
+            </article>
+
+            <article class="project-card">
+              <p class="project-index">Projet 04</p>
+              <h3>Guide d'installation d'un serveur Debian 12</h3>
+              <div class="language-tags">
+                <span class="language-tag">Linux</span>
+                <span class="language-tag">Apache</span>
+                <span class="language-tag">PostgreSQL</span>
+              </div>
+              <p>
+                Installation, configuration et documentation complète d'un serveur Debian 12
+                avec mise en place de services réseaux.
+              </p>
+              <button class="details-button" data-modal="modal4" type="button">Lire le projet</button>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section skills-section" id="competences">
+        <div class="container skills-layout">
+          <div class="section-heading">
+            <p class="section-kicker">Compétences</p>
+            <h2>Des compétences techniques, complétées par une méthode de travail structurée.</h2>
+          </div>
+
+          <div class="skills-columns">
+            <div class="skill-group">
+              <p class="group-title">Compétences techniques</p>
+              <div class="skills-grid">
+                <div class="skill-chip">
+                  <img src="icons/hard-skills/script-java.png" alt="Python" />
+                  <span>Python</span>
+                </div>
+                <div class="skill-chip">
+                  <img src="icons/hard-skills/script-java.png" alt="JavaScript" />
+                  <span>JavaScript</span>
+                </div>
+                <div class="skill-chip">
+                  <img src="icons/hard-skills/html-5.png" alt="HTML" />
+                  <span>HTML</span>
+                </div>
+                <div class="skill-chip">
+                  <img src="icons/hard-skills/css-3-2.png" alt="CSS3" />
+                  <span>CSS3</span>
+                </div>
+                <div class="skill-chip">
+                  <img src="icons/hard-skills/java.png" alt="Java" />
+                  <span>Java</span>
+                </div>
+                <div class="skill-chip">
+                  <img src="icons/hard-skills/c-plus-plus.png" alt="C, C sharp et C plus plus" />
+                  <span>C / C# / C++</span>
+                </div>
+                <div class="skill-chip">
+                  <img src="icons/hard-skills/langage-de-programmation-php.png" alt="PHP" />
+                  <span>PHP</span>
+                </div>
+                <div class="skill-chip">
+                  <img src="icons/hard-skills/serveur-sql.png" alt="SQL" />
+                  <span>SQL</span>
+                </div>
+                <div class="skill-chip">
+                  <img src="icons/hard-skills/serveur-sql.png" alt="NoSQL" />
+                  <span>NoSQL</span>
+                </div>
+                <div class="skill-chip">
+                  <img src="icons/hard-skills/script-java.png" alt="Git et Linux" />
+                  <span>Git / Linux</span>
+                </div>
+                <div class="skill-chip">
+                  <img src="icons/hard-skills/script-java.png" alt="Scikit-Learn, Keras et PyTorch" />
+                  <span>Scikit-Learn / Keras / PyTorch</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill-group soft-group">
+              <p class="group-title">Qualités de travail</p>
+              <div class="soft-list">
+                <article class="soft-card">
+                  <img src="icons/soft-skills/autonomie-2.png" alt="Organisation" />
+                  <div>
+                    <h3>Organisation</h3>
+                    <p>Capacité à structurer le travail et à avancer avec méthode.</p>
+                  </div>
+                </article>
+                <article class="soft-card">
+                  <img src="icons/soft-skills/horaire-flexible.png" alt="Souplesse" />
+                  <div>
+                    <h3>Flexibilité</h3>
+                    <p>Adaptation au rythme d'un projet, à ses imprévus et à ses contraintes.</p>
+                  </div>
+                </article>
+                <article class="soft-card">
+                  <img src="icons/soft-skills/esprit-dequipe.png" alt="Esprit d'équipe" />
+                  <div>
+                    <h3>Esprit d'équipe</h3>
+                    <p>Habitude de travailler à plusieurs avec répartition claire des responsabilités.</p>
+                  </div>
+                </article>
+                <article class="soft-card">
+                  <img src="icons/soft-skills/la-communication.png" alt="Communication" />
+                  <div>
+                    <h3>Communication</h3>
+                    <p>Volonté de rendre les échanges utiles, simples et précis.</p>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section experience-section" id="experiences">
+        <div class="container">
+          <div class="section-heading split">
+            <div>
+              <p class="section-kicker">Expériences</p>
+              <h2>Deux expériences qui ont renforcé ma pratique du concret.</h2>
+            </div>
+          </div>
+
+          <div class="experience-list">
+            <article class="experience-card">
+              <span class="timeline-date">Avril 2025 - Juillet 2025</span>
+              <h3>Stage en développement</h3>
+              <p class="timeline-place">Conductix-Wampfler</p>
+              <p>Développement d'un site de suivi de production pour environ 40 utilisateurs.</p>
+              <p>Analyse des besoins, conception et modélisation de l'application et de la base de données, développement et présentations régulières de l'avancement.</p>
+            </article>
+            <article class="experience-card">
+              <span class="timeline-date">Mai - Juin 2024</span>
+              <h3>Projet réseaux</h3>
+              <p class="timeline-place">BUT Informatique</p>
+              <p>Installation et configuration d'un serveur Debian 12, mise en place de services réseaux et rédaction d'un guide d'installation complet en anglais.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section extra-section" id="complements">
+        <div class="container extra-grid">
+          <div class="section-heading split">
+            <div>
+              <p class="section-kicker">Compléments</p>
+              <h2>Langues et centres d'intérêt.</h2>
+            </div>
+          </div>
+          <div class="meta-panel">
+            <div class="meta-row">
+              <span class="meta-label">Langues</span>
+              <p>Français natif · Anglais B1 · Italien B1</p>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">Centres d'intérêt</span>
+              <p>Guitare · Lecture · Randonnée · Vélo</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section contact-section" id="contact">
+        <div class="container contact-panel">
+          <div>
+            <p class="section-kicker">Contact</p>
+            <h2>Me contacter pour une alternance ou pour échanger sur mon parcours.</h2>
+          </div>
+          <div class="contact-actions">
+            <p>
+              Je suis disponible pour discuter d'une alternance à partir de la rentrée 2026,
+              en développement logiciel, data ou automatisation.
+            </p>
+            <a class="button button-primary" href="mailto:lucasfosse38@gmail.com">lucasfosse38@gmail.com</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="modal1" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modal1-title" aria-modal="true">
+      <div class="modal-content" tabindex="-1">
+        <button class="close" type="button" aria-label="Fermer la fenêtre">×</button>
+        <p class="modal-kicker">Projet 01</p>
+        <h2 id="modal1-title">Site web de recommandation de musées</h2>
+        <p>
+          Dans le cadre d'un projet universitaire, nous devions concevoir une
+          application visant à promouvoir le patrimoine culturel. En équipe de 6,
+          nous avons développé un site capable de recommander des musées selon les
+          préférences collectées.
+        </p>
+        <p>
+          L'application repose sur un système de swipe permettant de capter les
+          goûts de l'utilisateur, puis de proposer un musée cohérent et proche de
+          chez lui après plusieurs interactions.
+        </p>
+        <p>
+          Sur ce projet, j'ai assuré un rôle de chef de projet avec du cadrage,
+          de la répartition des tâches, de la conception et une partie du développement React.
+        </p>
+      </div>
     </div>
-  </header>
 
-  <main>
-  
-
-    <section id="presentation">
-      <div class="container presentation-content">
-        <div class="presentation-left">
-          <h1>Lucas FOSSE</h1>
-          <p>Étudiant en informatique - Université Grenoble Alpes</p>
-        </div>
-        <div class="presentation-right">
-          <p>Je suis étudiant en deuxième année de BUT Informatique, parcours développement d'applications.</p>
-          <p>Je vous présente ici mes formations, mes expériences et mes projets !</p>
-          <p>N'hésitez pas à me contacter !</p>
-        </div>
+    <div id="modal2" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modal2-title" aria-modal="true">
+      <div class="modal-content" tabindex="-1">
+        <button class="close" type="button" aria-label="Fermer la fenêtre">×</button>
+        <p class="modal-kicker">Projet 02</p>
+        <h2 id="modal2-title">Application de gestion d'évènements</h2>
+        <p>
+          En équipe de 6, nous avons conçu une application de gestion d'évènements
+          structurée autour de plusieurs livrables: dossier de conception, dossier
+          IHM, gestion des risques et optimisation mathématique.
+        </p>
+        <p>
+          L'application répondait à un contexte de gestion funéraire avec prise en
+          charge des employés, contrats obsèques, rendez-vous, véhicules et prestations.
+        </p>
+        <p>
+          J'ai participé à la conception, à la gestion des risques, au développement
+          et à la coordination de l'équipe avec une autre personne.
+        </p>
+        <a href="https://github.com/lucasfse/gestion-event" class="more-info" target="_blank" rel="noopener noreferrer">Voir le dépôt GitHub</a>
       </div>
-    </section>
-
-    <section id="formations" class="formations">
-      <h2>Formations</h2>
-      <div class="container formations-container">
-        <div class="timeline">
-          <div class="timeline-item">
-            <h3>Baccalauréat Général</h3>
-            <p>Lycée Vaucanson</p>
-            <p>Spécialités mathématiques, NSI - mention bien</p>
-            <p>2020 - 2023</p>
-          </div>
-          <div class="timeline-item">
-            <h3>BUT Informatique</h3>
-            <p>IUT2 - Grenoble</p>
-            <p>Parcours développement d'applications</p>
-            <p>2023 - Maintenant</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="projets" class="projects">
-      <h2>Projets</h2>
-      <div class="container projects-container">
-        <article class="project-card">
-          <h3>Développement d'un site web visant a promouvoir les musées</h3>
-          <div class="language-tags">
-            <span class="language-tag">React</span>
-            <span class="language-tag">Node.js</span>
-            <span class="language-tag">SQL</span>
-          </div>
-          <p>Promouvoir les musées en recommandant aux utilisateurs des musées selon leurs préférences picturales.</p>
-          <button class="details-button" data-modal="modal1" tabindex="0">Détails</button>
-        </article>
-        <article class="project-card">
-          <h3>Réalisation d'une application de gestion d'évènements</h3>
-          <div class="language-tags">
-            <span class="language-tag">Java</span>
-            <span class="language-tag">JavaFX</span>
-          </div>
-          <p>Réalisation d'une application de gestion d'évènements, en équipe de 6, en utilisant Java et JavaFX.</p>
-          <button class="details-button" data-modal="modal2" tabindex="0">Détails</button>
-        </article>
-        <article class="project-card">
-          <h3>Exploitation d'une base de données</h3>
-          <div class="language-tags">
-            <span class="language-tag">SQL</span>
-            <span class="language-tag">RStudio</span>
-          </div>
-          <p>Réalisation d'une étude contenant des graphiques pour répondre à une question précise, rédigée en anglais, en se basant sur l'analyse de données relatives au nutriscore.</p>
-          <button class="details-button" data-modal="modal3" tabindex="0">Détails</button>
-        </article>
-        <article class="project-card">
-          <h3>Réalisation d'un guide d'installation d'un serveur Debian 12</h3>
-          <div class="language-tags">
-            <span class="language-tag">Linux</span>
-          </div>
-          <p>Réalisation d'un guide d'installation d'un serveur Debian 12.</p>
-          <button class="details-button" data-modal="modal4" tabindex="0">Détails</button>
-        </article>
-      </div>
-    </section>
-
-
-    <section id="competences" class="skills">
-      <h2>Hard Skills</h2>
-      <div class="container skills-container">
-        <div class="skill">
-          <img src="icons/hard-skills/script-java.png" alt="JavaScript" />
-          <p>JavaScript</p>
-        </div>
-        <div class="skill">
-          <img src="icons/hard-skills/html-5.png" alt="HTML" />
-          <p>HTML</p>
-        </div>
-        <div class="skill">
-          <img src="icons/hard-skills/css-3-2.png" alt="CSS3" />
-          <p>CSS3</p>
-        </div>
-        <div class="skill">
-          <img src="icons/hard-skills/java.png" alt="Java" />
-          <p>Java</p>
-        </div>
-        <div class="skill">
-          <img src="icons/hard-skills/c-plus-plus.png" alt="C/C++/C#" />
-          <p>C/C#/C++</p>
-        </div>
-        <div class="skill">
-          <img src="icons/hard-skills/langage-de-programmation-php.png" alt="PHP" />
-          <p>PHP</p>
-        </div>
-        <div class="skill">
-          <img src="icons/hard-skills/serveur-sql.png" alt="SQL" />
-          <p>SQL</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="soft" class="soft-skills">
-      <h2>Soft Skills</h2>
-      <div class="container skills-container">
-        <div class="skill">
-          <img src="icons/soft-skills/autonomie-2.png" alt="Autonome Icon">
-          <p>Organisation</p>
-        </div>
-        <div class="skill">
-          <img src="icons/soft-skills/horaire-flexible.png" alt="Flexible Icon">
-          <p>Flexible</p>
-        </div>
-        <div class="skill">
-          <img src="icons/soft-skills/esprit-dequipe.png" alt="Esprit d'équipe Icon">
-          <p>Esprit d'équipe</p>
-        </div>
-        <div class="skill">
-          <img src="icons/soft-skills/la-communication.png" alt="Communication Icon">
-          <p>Communication</p>
-        </div>
-      </div>
-    </section>
-
-
-    <section id="experiences" class="experiences">
-      <h2>Expériences</h2>
-      <div class="container experiences-container">
-        <div class="timeline">
-          <div class="timeline-item">
-            <h3>Assistant de vente</h3>
-            <p>OCEAN Coquillages & Crustacés</p>
-            <p>2023</p>
-          </div>
-          <div class="timeline-item">
-            <h3>Stage développement web - amélioration du MES de l'entreprise</h3>
-            <p>JAY Electronique</p>
-            <p>2025</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <section id="contact" class="contact">
-      <h2>Contact</h2>
-      <div class="container">
-        <p>N'hésitez pas à me contacter en cas de question ! </p>
-        <a href="mailto:lucasfosse38@gmail.com">Envoyer un email</a>
-      </div>
-    </section>
-  </main>
-
-  <!-- Modals -->
-  <div id="modal1" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modal1-title" aria-modal="true">
-    <div class="modal-content">
-      <span class="close" role="button" tabindex="0" aria-label="Fermer la fenêtre modale">×</span>
-      <h2 id="modal1-title">Développement d'un site web visant a promouvoir les musées</h2>
-      <p>Dans le cadre d'un projet universitaire, nous devions réaliser une application visant a promouvoir le patrimoine culturel. En équipe de 6, nous avons donc développé un site web recommandant des musées en fonction des préférences collectés.</p>
-      <p>L'application fonctionne à l'aide d'un algorithme qui recueil un certain nombre de préférences grace à un système de swipe, et, au bout de 10 swipes, propose un musée proche de chez l'utilisateur et en fonction de ses gouts.</p>
-      <p>Pour ma part, étant chef de projet, j'ai particulièrement du travailler sur le cadrage de projet et la répartition des tâches. Cependant, j'ai aussi beaucoup travaillé sur l'aspect conception (modélisation des classes, des IHM) et le développement des interfaces en React.</p>
-    
     </div>
+
+    <div id="modal3" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modal3-title" aria-modal="true">
+      <div class="modal-content" tabindex="-1">
+        <button class="close" type="button" aria-label="Fermer la fenêtre">×</button>
+        <p class="modal-kicker">Projet 03</p>
+        <h2 id="modal3-title">Exploitation d'une base de données</h2>
+        <p>
+          Ce travail consistait à produire une étude en anglais autour du
+          Nutri-Score, avec nettoyage des données, analyse, graphiques et problématique définie.
+        </p>
+        <p>
+          Le projet a été mené en binôme avec une répartition des tâches entre
+          rédaction, visualisation, requêtes SQL et gestion des risques.
+        </p>
+        <p>
+          Je me suis surtout concentré sur l'écriture des requêtes et sur la
+          structuration du travail d'analyse.
+        </p>
+        <a href="SAE2.04_Adrien_LEGLISE_Lucas_FOSSE.html" class="more-info" target="_blank" rel="noopener noreferrer">Consulter le projet</a>
+      </div>
+    </div>
+
+    <div id="modal4" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modal4-title" aria-modal="true">
+      <div class="modal-content" tabindex="-1">
+        <button class="close" type="button" aria-label="Fermer la fenêtre">×</button>
+        <p class="modal-kicker">Projet 04</p>
+        <h2 id="modal4-title">Guide d'installation d'un serveur Debian 12</h2>
+        <p>
+          Réalisation individuelle d'un guide d'installation et de configuration
+          d'un serveur Debian 12 pensé pour rester lisible et exploitable.
+        </p>
+        <p>
+          Le document couvre l'installation du serveur ainsi que la mise en place
+          d'Apache, PostgreSQL, PHP et phpPgAdmin, avec explications et commandes.
+        </p>
+        <p>
+          Ce projet met en avant ma capacité à configurer un environnement technique
+          et à produire une documentation claire et exploitable.
+        </p>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>Lucas FOSSE</p>
+        <p>Portfolio 2025</p>
+      </div>
+    </footer>
   </div>
 
-  <div id="modal2" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modal2-title" aria-modal="true">
-    <div class="modal-content">
-      <span class="close" role="button" tabindex="0" aria-label="Fermer la fenêtre modale">×</span>
-      <h2 id="modal2-title">Réalisation d'une application de gestion d'évènements</h2>
-      <p>En équipe de 6, nous avons réalisé une application de gestion d'évènements. Notre projet était structuré en plusieurs étapes : rédaction d'un dossier de conception, rédaction d'un dossier de conception IHM (aspect graphique), gestion des risques lié a ce projet et optimisation mathématique.</p>
-      <p>Notre application était une application de gestion funéraire, comprenant tous les aspects nécessaire a ce type de structures : gestion employés, contrats obsèques, calendrier, rendez-vous, véhicules et prestations.</p>
-      <p>Pour ma part, lors de ce projet, j'ai particulièrement travaillé sur le dossier de conception, la gestion des risques et la programmation de l'application.</p>
-      <p>J'ai également, avec une autre personne de l'équipe, assuré la supervision et la répartition des tâches.</p>
-      <a href="https://github.com/lucasfse/gestion-event" class="more-info" target="_blank" rel="noopener noreferrer">En savoir plus</a>
-    </div>
-  </div>
-
-  <div id="modal3" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modal3-title" aria-modal="true">
-    <div class="modal-content">
-      <span class="close" role="button" tabindex="0" aria-label="Fermer la fenêtre modale">×</span>
-      <h2 id="modal3-title">Exploitation d'une base de données</h2>
-      <p>La finalité de ce travail était de réaliser une étude en anglais comprenant des graphiques au sujet du nutriscore.</p>
-      <p>Nous avons travaillé en équipe de deux, avec une répartition des tâches comme ceci : la réalisation du rapport et des graphiques par un des membres, et l'élaboration des requêtes et gestion des risques par l'autre membre.</p>
-      <p>Pour ma part, j'ai davantage travaillé sur l'écriture des requêtes ainsi que la gestion des risques.</p>
-      <a href="SAE2.04_Adrien_LEGLISE_Lucas_FOSSE.html" class="more-info" target="_blank" rel="noopener noreferrer">En savoir plus</a>
-    </div>
-  </div>
-
-  <div id="modal4" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modal4-title" aria-modal="true">
-    <div class="modal-content">
-      <span class="close" role="button" tabindex="0" aria-label="Fermer la fenêtre modale">×</span>
-      <h2 id="modal3-title">Réalisation d'un guide d'installation d'un serveur Debian 12</h2>
-      <p>Réalisation, en individuel, d'un guide d'installation d'un serveur Debian 12.</p>
-      <p>Ce guide contient, explications et commandes, pour l'installation et la configuration du serveur, ainsi que, sur ce serveur, la configuration d'Apache, PostgreSQL, PHP et phpPgAdmin.</p>
-      <a href="A2-FOSSE-Lucas-guide-d-installation.pdf" class="more-info" target="_blank" rel="noopener noreferrer">En savoir plus</a>
-    </div>
-  </div>
-
-  <footer>
-    © Lucas FOSSE - 2025
-  </footer>
   <script src="scripts.js"></script>
 </body>
 </html>
