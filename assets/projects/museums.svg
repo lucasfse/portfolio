@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" aria-labelledby="title">
+  <title id="title">Interface Artswipe</title>
+  <rect width="900" height="520" rx="18" fill="#075f4e"/>
+  <rect x="0" y="0" width="320" height="520" fill="#fffdf1"/>
+  <rect x="0" y="0" width="58" height="520" fill="#075f4e"/>
+
+  <g fill="none" stroke="#f4df9d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="32" cy="188" r="16" fill="#f4df9d"/>
+    <path d="M24 181h14v14H24z" stroke="#075f4e"/>
+    <path d="m25 194 14-14" stroke="#075f4e"/>
+    <path d="M22 235h20M25 235v-8h14v8M27 227v-5h10v5M22 241h20" />
+    <path d="M27 292h10v17l-5-3-5 3z" />
+    <path d="M32 354v-20M22 344h20M25 334l-3-7 7-3 3 5 3-5 7 3-3 7" />
+    <rect x="20" y="405" width="24" height="24" rx="5"/>
+  </g>
+
+  <g font-family="Inter, Arial, sans-serif">
+    <text x="136" y="62" fill="#173151" font-size="27" font-weight="900" text-anchor="middle">CE QUI VOUS</text>
+    <text x="136" y="94" fill="#173151" font-size="27" font-weight="900" text-anchor="middle">CORRESPOND</text>
+    <rect x="86" y="126" width="186" height="108" rx="16" fill="#173151"/>
+    <rect x="94" y="134" width="170" height="92" rx="10" fill="#80b7d7"/>
+    <path d="M92 205h175v22H92z" fill="#101820" opacity=".55"/>
+    <path d="M110 198l40-46 36 29 42-38 36 55z" fill="#e7ece5"/>
+    <path d="M150 152l38 29 40-36 36 55H110z" fill="#d0d8c8"/>
+    <text x="112" y="194" fill="#fff1b4" font-size="18" font-weight="900">MUSÉE DE</text>
+    <text x="112" y="218" fill="#fff1b4" font-size="18" font-weight="900">GRENOBLE</text>
+
+    <rect x="86" y="254" width="186" height="82" rx="16" fill="none" stroke="#173151" stroke-width="4"/>
+    <circle cx="179" cy="295" r="19" fill="none" stroke="#173151" stroke-width="3"/>
+    <path d="M179 278v34M162 295h34" stroke="#173151" stroke-width="3"/>
+
+    <text x="178" y="386" fill="#173151" font-size="27" font-weight="900" text-anchor="middle">ÉVÈNEMENT</text>
+    <rect x="86" y="424" width="186" height="58" rx="14" fill="#173151"/>
+    <rect x="94" y="432" width="170" height="42" rx="8" fill="#f8efe0"/>
+    <rect x="104" y="440" width="45" height="28" fill="#dc4f38"/>
+    <rect x="156" y="438" width="48" height="30" fill="#f0b336"/>
+    <rect x="210" y="441" width="38" height="27" fill="#d85b3c"/>
+    <path d="M236 438c10 12 8 30-6 34" stroke="#263238" stroke-width="4" fill="none"/>
+    <text x="111" y="463" fill="#fff1b4" font-size="15" font-weight="900">EXPOSITION</text>
+  </g>
+
+  <g fill="none" stroke="#f4df9d" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="348" y="34" width="28" height="28" rx="8"/>
+    <path d="M366 48h-14M356 42l-6 6 6 6"/>
+    <rect x="848" y="34" width="28" height="28" rx="8"/>
+    <path d="M856 46h12v12l-6-4-6 4z"/>
+  </g>
+
+  <g font-family="Inter, Arial, sans-serif">
+    <rect x="480" y="98" width="266" height="170" rx="9" fill="#eadbc3"/>
+    <path d="M480 160c55-50 110-48 157 0s81 43 109 12v96H480z" fill="#c99b73"/>
+    <path d="M505 234c28-64 72-90 132-83 44 5 75 33 91 62" fill="none" stroke="#fff8df" stroke-width="16" stroke-linecap="round"/>
+    <path d="M544 224c46-44 91-46 138-4" fill="none" stroke="#7f4f38" stroke-width="12" stroke-linecap="round"/>
+    <path d="M506 190c54-36 112-60 214-56" fill="none" stroke="#e6c391" stroke-width="9" stroke-linecap="round"/>
+    <circle cx="730" cy="118" r="18" fill="#173151"/>
+    <path d="M724 128c7 6 18 5 25-1-1 11-25 13-25 1z" fill="#f0c7ac"/>
+
+    <text x="460" y="316" fill="#f4df9d" font-size="34" font-weight="900">LA CRÉATION D'ADAM</text>
+    <text x="460" y="352" fill="#f4df9d" font-size="23" font-weight="500">1508-1512</text>
+    <text x="460" y="386" fill="#fffdf1" font-size="18" font-weight="700">Swipez des œuvres pour construire un profil</text>
+    <text x="460" y="410" fill="#fffdf1" font-size="18" font-weight="700">artistique et obtenir des musées recommandés.</text>
+    <line x1="498" x2="732" y1="434" y2="434" stroke="#9bb6a7"/>
+
+    <rect x="410" y="462" width="94" height="24" rx="12" fill="#173151"/>
+    <rect x="516" y="462" width="112" height="24" rx="12" fill="#173151"/>
+    <rect x="640" y="462" width="92" height="24" rx="12" fill="#173151"/>
+    <rect x="744" y="462" width="92" height="24" rx="12" fill="#173151"/>
+    <text x="457" y="479" fill="#f4df9d" font-size="12" font-weight="800" text-anchor="middle">Fresque</text>
+    <text x="572" y="479" fill="#f4df9d" font-size="12" font-weight="800" text-anchor="middle">Renaissance</text>
+    <text x="686" y="479" fill="#f4df9d" font-size="12" font-weight="800" text-anchor="middle">Art chrétien</text>
+    <text x="790" y="479" fill="#f4df9d" font-size="12" font-weight="800" text-anchor="middle">Plâtre</text>
+  </g>
+</svg>

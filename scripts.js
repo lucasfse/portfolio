@@ -1,16 +1,13 @@
 const navLinks = document.querySelectorAll('.site-nav a');
-const sections = [...navLinks]
-  .map(link => document.querySelector(link.getAttribute('href')))
-  .filter(Boolean);
-
+const sections = document.querySelectorAll('[data-section]');
 const menuToggle = document.querySelector('.menu-toggle');
 const siteNav = document.querySelector('.site-nav');
+const revealItems = document.querySelectorAll('.reveal');
+const scrollRoot = document.querySelector('.snap-pages');
 const modals = document.querySelectorAll('.modal');
-const detailsButtons = document.querySelectorAll('.details-button');
-const closeButtons = document.querySelectorAll('.close');
 
 let activeModal = null;
-let lastTrigger = null;
+let lastModalTrigger = null;
 
 function closeMenu() {
   if (!menuToggle || !siteNav) {
@@ -28,14 +25,14 @@ function openModal(modal, trigger) {
   }
 
   activeModal = modal;
-  lastTrigger = trigger || null;
+  lastModalTrigger = trigger || null;
   modal.classList.add('is-open');
   modal.setAttribute('aria-hidden', 'false');
   document.body.classList.add('modal-open');
 
-  const focusTarget = modal.querySelector('.modal-content');
-  if (focusTarget) {
-    focusTarget.focus();
+  const panel = modal.querySelector('.modal-panel');
+  if (panel) {
+    panel.focus();
   }
 }
 
@@ -48,73 +45,93 @@ function closeModal(modal) {
   modal.setAttribute('aria-hidden', 'true');
   document.body.classList.remove('modal-open');
 
-  if (lastTrigger) {
-    lastTrigger.focus();
+  if (lastModalTrigger) {
+    lastModalTrigger.focus();
   }
 
   activeModal = null;
-  lastTrigger = null;
+  lastModalTrigger = null;
 }
+
+window.openProjectModal = function openProjectModal(modalId, trigger) {
+  openModal(document.getElementById(modalId), trigger);
+};
 
 navLinks.forEach(link => {
   link.addEventListener('click', event => {
-    const targetSelector = link.getAttribute('href');
-    const targetSection = document.querySelector(targetSelector);
+    const target = document.querySelector(link.getAttribute('href'));
 
-    if (!targetSection) {
+    if (!target) {
       return;
     }
 
     event.preventDefault();
-    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     closeMenu();
   });
 });
 
 if (menuToggle && siteNav) {
   menuToggle.addEventListener('click', () => {
-    const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
-    menuToggle.setAttribute('aria-expanded', String(!isOpen));
-    siteNav.classList.toggle('is-open', !isOpen);
-    document.body.classList.toggle('menu-open', !isOpen);
+    const willOpen = menuToggle.getAttribute('aria-expanded') !== 'true';
+    menuToggle.setAttribute('aria-expanded', String(willOpen));
+    siteNav.classList.toggle('is-open', willOpen);
+    document.body.classList.toggle('menu-open', willOpen);
   });
 }
 
-const observer = new IntersectionObserver(
+const activeObserver = new IntersectionObserver(
   entries => {
-    const visibleEntry = entries
+    const activeEntry = entries
       .filter(entry => entry.isIntersecting)
       .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
 
-    if (!visibleEntry) {
+    if (!activeEntry) {
       return;
     }
 
-    const currentId = `#${visibleEntry.target.id}`;
+    const activeId = `#${activeEntry.target.id}`;
     navLinks.forEach(link => {
-      link.classList.toggle('active', link.getAttribute('href') === currentId);
+      link.classList.toggle('active', link.getAttribute('href') === activeId);
     });
   },
   {
-    rootMargin: '-25% 0px -55% 0px',
-    threshold: [0.2, 0.35, 0.55],
+    root: scrollRoot,
+    threshold: [0.45, 0.6, 0.75],
   }
 );
 
-sections.forEach(section => observer.observe(section));
+sections.forEach(section => activeObserver.observe(section));
 
-detailsButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    const modalId = button.getAttribute('data-modal');
-    const modal = document.getElementById(modalId);
-    openModal(modal, button);
-  });
-});
+const revealObserver = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  },
+  {
+    root: scrollRoot,
+    rootMargin: '0px 0px -12% 0px',
+    threshold: 0.16,
+  }
+);
 
-closeButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    closeModal(button.closest('.modal'));
-  });
+revealItems.forEach(item => revealObserver.observe(item));
+
+document.addEventListener('click', event => {
+  const modalTrigger = event.target.closest('[data-modal]');
+  if (modalTrigger) {
+    openModal(document.getElementById(modalTrigger.dataset.modal), modalTrigger);
+    return;
+  }
+
+  const closeButton = event.target.closest('.modal-close');
+  if (closeButton) {
+    closeModal(closeButton.closest('.modal'));
+  }
 });
 
 modals.forEach(modal => {

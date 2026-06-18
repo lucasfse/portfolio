@@ -1,0 +1,96 @@
+<svg width="960" height="520" viewBox="0 0 960 520" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#eef3ea"/>
+      <stop offset="1" stop-color="#fbf8f1"/>
+    </linearGradient>
+    <filter id="soft" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#171717" flood-opacity=".12"/>
+    </filter>
+  </defs>
+
+  <rect width="960" height="520" rx="0" fill="url(#bg)"/>
+
+  <rect x="74" y="54" width="812" height="412" rx="26" fill="#fffdf8" stroke="#d8d3c9" filter="url(#soft)"/>
+
+  <g transform="translate(104 86)">
+    <rect x="0" y="0" width="752" height="48" rx="14" fill="#171717"/>
+    <circle cx="28" cy="24" r="7" fill="#a7634e"/>
+    <circle cx="52" cy="24" r="7" fill="#d9b56f"/>
+    <circle cx="76" cy="24" r="7" fill="#60735b"/>
+    <text x="116" y="30" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="800" fill="#fffdf8">AlgoViz</text>
+    <text x="628" y="30" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" fill="#cfc8ba">visual step mode</text>
+  </g>
+
+  <g transform="translate(126 170)">
+    <rect x="0" y="0" width="226" height="226" rx="18" fill="#f5f1e8" stroke="#d8d3c9"/>
+    <text x="22" y="34" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="800" fill="#171717">Sudoku</text>
+    <text x="22" y="58" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#60735b">backtracking / MRV</text>
+    <g transform="translate(24 78)" stroke="#bdb6aa" stroke-width="1.4">
+      <rect x="0" y="0" width="150" height="150" fill="#fffdf8"/>
+      <path d="M50 0v150M100 0v150M0 50h150M0 100h150" stroke-width="3" stroke="#81796e"/>
+      <path d="M16.66 0v150M33.33 0v150M66.66 0v150M83.33 0v150M116.66 0v150M133.33 0v150M0 16.66h150M0 33.33h150M0 66.66h150M0 83.33h150M0 116.66h150M0 133.33h150"/>
+      <rect x="66.66" y="33.33" width="16.66" height="16.66" fill="#a7634e" opacity=".9"/>
+      <rect x="100" y="100" width="16.66" height="16.66" fill="#60735b" opacity=".85"/>
+      <text x="20" y="30" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="800" fill="#171717" stroke="none">5</text>
+      <text x="72" y="47" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="800" fill="#fffdf8" stroke="none">?</text>
+      <text x="106" y="113" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="800" fill="#fffdf8" stroke="none">8</text>
+    </g>
+  </g>
+
+  <g transform="translate(380 170)">
+    <rect x="0" y="0" width="226" height="226" rx="18" fill="#f5f1e8" stroke="#d8d3c9"/>
+    <text x="22" y="34" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="800" fill="#171717">Dijkstra</text>
+    <text x="22" y="58" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#60735b">shortest path</text>
+    <g transform="translate(32 88)">
+      <path d="M28 92 C70 26 116 132 166 36" fill="none" stroke="#d8d3c9" stroke-width="10" stroke-linecap="round"/>
+      <path d="M28 92 C70 26 116 132 166 36" fill="none" stroke="#3d7280" stroke-width="5" stroke-linecap="round"/>
+      <path d="M28 92 L64 54 L116 98 L166 36" fill="none" stroke="#a7634e" stroke-width="4" stroke-linecap="round" stroke-dasharray="7 7"/>
+      <g fill="#fffdf8" stroke="#171717" stroke-width="4">
+        <circle cx="28" cy="92" r="16"/>
+        <circle cx="64" cy="54" r="16"/>
+        <circle cx="116" cy="98" r="16"/>
+        <circle cx="166" cy="36" r="16"/>
+      </g>
+      <g font-family="Inter, Arial, sans-serif" font-size="12" font-weight="800" fill="#171717" text-anchor="middle">
+        <text x="28" y="96">0</text>
+        <text x="64" y="58">3</text>
+        <text x="116" y="102">7</text>
+        <text x="166" y="40">9</text>
+      </g>
+    </g>
+  </g>
+
+  <g transform="translate(634 170)">
+    <rect x="0" y="0" width="226" height="226" rx="18" fill="#f5f1e8" stroke="#d8d3c9"/>
+    <text x="22" y="34" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="800" fill="#171717">VRP</text>
+    <text x="22" y="58" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#60735b">tabu search</text>
+    <g transform="translate(34 88)">
+      <path d="M78 66 L32 38 L46 116 L112 126 L154 52 Z" fill="none" stroke="#3d7280" stroke-width="5" stroke-linejoin="round"/>
+      <path d="M78 66 L122 28 L154 52" fill="none" stroke="#a7634e" stroke-width="5" stroke-linecap="round"/>
+      <g fill="#fffdf8" stroke="#171717" stroke-width="4">
+        <circle cx="78" cy="66" r="16"/>
+        <circle cx="32" cy="38" r="12"/>
+        <circle cx="46" cy="116" r="12"/>
+        <circle cx="112" cy="126" r="12"/>
+        <circle cx="154" cy="52" r="12"/>
+        <circle cx="122" cy="28" r="12"/>
+      </g>
+      <rect x="10" y="146" width="154" height="12" rx="6" fill="#d8d3c9"/>
+      <rect x="10" y="146" width="104" height="12" rx="6" fill="#60735b"/>
+    </g>
+  </g>
+
+  <g transform="translate(126 414)">
+    <rect x="0" y="0" width="160" height="24" rx="12" fill="#60735b"/>
+    <text x="80" y="17" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="800" fill="#fffdf8" text-anchor="middle">React + Vite</text>
+  </g>
+  <g transform="translate(302 414)">
+    <rect x="0" y="0" width="134" height="24" rx="12" fill="#fffdf8" stroke="#d8d3c9"/>
+    <text x="67" y="17" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="800" fill="#171717" text-anchor="middle">DSATUR</text>
+  </g>
+  <g transform="translate(452 414)">
+    <rect x="0" y="0" width="134" height="24" rx="12" fill="#fffdf8" stroke="#d8d3c9"/>
+    <text x="67" y="17" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="800" fill="#171717" text-anchor="middle">Dijkstra</text>
+  </g>
+</svg>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" aria-labelledby="title">
+  <title id="title">Serveur Debian et services web</title>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#ecefe9"/>
+      <stop offset="1" stop-color="#ded9cf"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="520" fill="url(#bg)"/>
+  <rect x="112" y="74" width="300" height="372" rx="22" fill="#fffdf8" opacity=".9"/>
+  <rect x="488" y="108" width="300" height="270" rx="18" fill="#171717" opacity=".88"/>
+  <g fill="#d8ddd2">
+    <rect x="154" y="126" width="216" height="62" rx="12"/>
+    <rect x="154" y="218" width="216" height="62" rx="12"/>
+    <rect x="154" y="310" width="216" height="62" rx="12"/>
+  </g>
+  <g fill="#60735b"><circle cx="192" cy="157" r="9"/><circle cx="192" cy="249" r="9"/><circle cx="192" cy="341" r="9"/></g>
+  <g fill="#fffdf8" font-family="Arial, sans-serif" font-size="30" font-weight="700">
+    <text x="530" y="180">$ apt install</text>
+    <text x="530" y="232">$ apache2</text>
+    <text x="530" y="284">$ postgresql</text>
+  </g>
+  <path d="M412 260h76" stroke="#9f624f" stroke-width="12" stroke-linecap="round"/>
+</svg>

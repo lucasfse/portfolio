@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" aria-labelledby="title">
+  <title id="title">Analyse de données Nutri-Score</title>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#edf1e7"/>
+      <stop offset="1" stop-color="#f2e5dc"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="520" fill="url(#bg)"/>
+  <rect x="86" y="76" width="728" height="368" rx="24" fill="#fffdf8" opacity=".88"/>
+  <g transform="translate(140 135)">
+    <rect width="98" height="72" rx="12" fill="#3f8f5a"/>
+    <rect x="110" width="98" height="72" rx="12" fill="#a9bb58"/>
+    <rect x="220" width="98" height="72" rx="12" fill="#e5c75e"/>
+    <rect x="330" width="98" height="72" rx="12" fill="#d88a54"/>
+    <rect x="440" width="98" height="72" rx="12" fill="#b85b52"/>
+    <g fill="#fffdf8" font-family="Arial, sans-serif" font-size="42" font-weight="700">
+      <text x="34" y="50">A</text><text x="144" y="50">B</text><text x="254" y="50">C</text><text x="364" y="50">D</text><text x="474" y="50">E</text>
+    </g>
+  </g>
+  <path d="M155 365h120l76-110 84 66 75-44 90 76 120-148" fill="none" stroke="#3d6671" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#60735b"><circle cx="275" cy="365" r="10"/><circle cx="351" cy="255" r="10"/><circle cx="435" cy="321" r="10"/><circle cx="510" cy="277" r="10"/><circle cx="600" cy="353" r="10"/></g>
+</svg>

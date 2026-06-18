@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" aria-labelledby="title">
+  <title id="title">Application de gestion d'évènements</title>
+  <rect width="900" height="520" fill="#f8f8f6"/>
+  <rect width="134" height="520" fill="#1262b3"/>
+
+  <g transform="translate(48 36)">
+    <ellipse cx="20" cy="31" rx="18" ry="24" fill="#2fc0e6"/>
+    <path d="M5 8c8 7 22 7 30 0 0 13-7 24-15 24S5 21 5 8z" fill="#5fd5ef"/>
+    <circle cx="12" cy="28" r="8" fill="#ffffff"/>
+    <circle cx="28" cy="28" r="8" fill="#ffffff"/>
+    <circle cx="13" cy="29" r="4" fill="#173151"/>
+    <circle cx="27" cy="29" r="4" fill="#173151"/>
+    <path d="M20 34l5 6H15z" fill="#f0a337"/>
+    <path d="M7 55l8-8M33 55l-8-8" stroke="#2fc0e6" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <g font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">
+    <rect x="8" y="152" width="118" height="40" fill="#fff"/>
+    <rect x="8" y="198" width="118" height="40" fill="#fff"/>
+    <rect x="8" y="244" width="118" height="40" fill="#d9d9d9"/>
+    <rect x="8" y="290" width="118" height="40" fill="#fff"/>
+    <rect x="8" y="336" width="118" height="40" fill="#fff"/>
+    <text x="67" y="177" fill="#171717">Calendrier</text>
+    <text x="67" y="223" fill="#171717">Évènements</text>
+    <text x="67" y="269" fill="#171717">Employés</text>
+    <text x="67" y="315" fill="#171717">Contrats</text>
+    <text x="67" y="361" fill="#171717">Prestations</text>
+    <text x="67" y="421" fill="#fff" text-decoration="underline">Aide</text>
+  </g>
+
+  <rect x="26" y="437" width="82" height="28" fill="#fff"/>
+  <rect x="26" y="475" width="82" height="28" fill="#fff" stroke="#e03b3b"/>
+  <g font-family="Inter, Arial, sans-serif" font-size="10" font-weight="800" text-anchor="middle">
+    <text x="67" y="456" fill="#505050">Sauvegarder</text>
+    <text x="67" y="494" fill="#e03b3b">Quitter</text>
+  </g>
+
+  <g font-family="Inter, Arial, sans-serif">
+    <text x="170" y="58" fill="#171717" font-size="28" font-weight="900">Employés</text>
+    <rect x="742" y="38" width="108" height="28" fill="#fff" stroke="#171717" stroke-width=".8"/>
+    <path d="M758 52h12M764 46v12" stroke="#171717" stroke-width="1.8" stroke-linecap="round"/>
+    <text x="812" y="56" fill="#171717" font-size="10" font-weight="900" text-anchor="middle">Ajouter un employé</text>
+
+    <g fill="#171717" font-size="11" font-weight="700">
+      <text x="172" y="102">id</text>
+      <text x="205" y="102">Nom</text>
+      <text x="250" y="102">Prénom</text>
+      <text x="315" y="102">Fonctions</text>
+      <text x="398" y="102">N° téléphone</text>
+      <text x="500" y="102">Heures/semaine</text>
+    </g>
+    <line x1="162" x2="844" y1="120" y2="120" stroke="#171717" stroke-width=".8"/>
+  </g>
+
+  <g font-family="Inter, Arial, sans-serif" font-size="11" fill="#171717">
+    <rect x="162" y="137" width="682" height="32" rx="6" fill="#d4d4d4"/>
+    <rect x="162" y="180" width="682" height="32" rx="6" fill="#d4d4d4"/>
+    <rect x="162" y="223" width="682" height="32" rx="6" fill="#d4d4d4"/>
+    <rect x="162" y="266" width="682" height="32" rx="6" fill="#d4d4d4"/>
+    <rect x="162" y="309" width="682" height="32" rx="6" fill="#d4d4d4"/>
+    <rect x="162" y="352" width="682" height="32" rx="6" fill="#d4d4d4"/>
+    <rect x="162" y="395" width="682" height="32" rx="6" fill="#d4d4d4"/>
+
+    <g font-weight="700">
+      <text x="174" y="158">1</text><text x="205" y="158">Nom</text><text x="250" y="158">Prenom</text><text x="316" y="158">fonction</text><text x="398" y="158">numeroTel</text><text x="505" y="158">nbHeuresSemaine</text>
+      <text x="174" y="201">2</text><text x="205" y="201">Nom</text><text x="250" y="201">Prenom</text><text x="316" y="201">fonction</text><text x="398" y="201">numeroTel</text><text x="505" y="201">nbHeuresSemaine</text>
+      <text x="174" y="244">3</text><text x="205" y="244">Nom</text><text x="250" y="244">Prenom</text><text x="316" y="244">fonction</text><text x="398" y="244">numeroTel</text><text x="505" y="244">nbHeuresSemaine</text>
+      <text x="174" y="287">4</text><text x="205" y="287">Nom</text><text x="250" y="287">Prenom</text><text x="316" y="287">fonction</text><text x="398" y="287">numeroTel</text><text x="505" y="287">nbHeuresSemaine</text>
+      <text x="174" y="330">5</text><text x="205" y="330">Nom</text><text x="250" y="330">Prenom</text><text x="316" y="330">fonction</text><text x="398" y="330">numeroTel</text><text x="505" y="330">nbHeuresSemaine</text>
+      <text x="174" y="373">6</text><text x="205" y="373">Nom</text><text x="250" y="373">Prenom</text><text x="316" y="373">fonction</text><text x="398" y="373">numeroTel</text><text x="505" y="373">nbHeuresSemaine</text>
+      <text x="174" y="416">7</text><text x="205" y="416">Nom</text><text x="250" y="416">Prenom</text><text x="316" y="416">fonction</text><text x="398" y="416">numeroTel</text><text x="505" y="416">nbHeuresSemaine</text>
+    </g>
+  </g>
+
+  <g fill="#000000">
+    <path d="M812 148l9-9 6 6-9 9-8 2z"/>
+    <path d="M812 191l9-9 6 6-9 9-8 2z"/>
+    <path d="M812 234l9-9 6 6-9 9-8 2z"/>
+    <path d="M812 277l9-9 6 6-9 9-8 2z"/>
+    <path d="M812 320l9-9 6 6-9 9-8 2z"/>
+    <path d="M812 363l9-9 6 6-9 9-8 2z"/>
+    <path d="M812 406l9-9 6 6-9 9-8 2z"/>
+  </g>
+</svg>
